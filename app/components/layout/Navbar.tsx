@@ -44,7 +44,8 @@ export default function Navbar() {
 
   return (
     <header>
-      {/* TOPBAR */}
+
+      {/* ── TOPBAR ── */}
       <div className={styles.topbar}>
         <div className={styles.topbarInner}>
           <div className={styles.topbarLeft}>
@@ -64,7 +65,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* NAVBAR */}
+      {/* ── NAVBAR ── */}
       <nav className={`${styles.navbar} ${scrolled ? styles.navbarScrolled : ""}`}>
         <div className={styles.navInner}>
 
@@ -87,7 +88,13 @@ export default function Navbar() {
                 fill="none"
                 opacity="0.6"
               />
-              <line x1="14" y1="38" x2="38" y2="38" stroke="#c9a84c" strokeWidth="1.2" opacity="0.6" />
+              <line
+                x1="14" y1="38"
+                x2="38" y2="38"
+                stroke="#c9a84c"
+                strokeWidth="1.2"
+                opacity="0.6"
+              />
             </svg>
             <div>
               <div className={styles.logoMain}>Masjid Hamza</div>
@@ -121,13 +128,14 @@ export default function Navbar() {
             <span />
             <span />
           </button>
+
         </div>
 
         {/* MOBILE MENU */}
         {menuOpen && (
           <div className={styles.mobileMenu}>
             {navLinks.map((link) => (
-              
+              <a
                 key={link.href}
                 href={link.href}
                 onClick={() => setMenuOpen(false)}
@@ -136,7 +144,7 @@ export default function Navbar() {
                 {link.label}
               </a>
             ))}
-            
+            <a
               href="#donate"
               onClick={() => setMenuOpen(false)}
               className={styles.mobileDonate}
@@ -145,6 +153,7 @@ export default function Navbar() {
             </a>
           </div>
         )}
+
       </nav>
     </header>
   );
