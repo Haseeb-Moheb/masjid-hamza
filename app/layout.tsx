@@ -17,7 +17,7 @@ const amiri = Amiri({
 export const metadata: Metadata = {
   title: "Masjid Hamza – Islamic Center of Mira Mesa",
   description:
-    "Muslim community center located in Mira Mesa, San Diego. Daily prayers, Islamic education, community programs and services.",
+    "Muslim community center in Mira Mesa, San Diego. Daily prayers, Islamic education, and community programs.",
 };
 
 export default function RootLayout({
