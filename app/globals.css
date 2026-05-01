@@ -21,3 +21,15 @@ body {
   color: var(--navy);
   overflow-x: hidden;
 }
+
+html.dark {
+  --off-white: #0f1420;
+  --navy: #060d1e;
+  --navy-mid: #0d1830;
+  --navy-light: #152244;
+}
+
+html.dark body {
+  background: #0f1420;
+  color: #e8eaf0;
+}
