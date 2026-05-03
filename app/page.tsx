@@ -1,14 +1,11 @@
-import Navbar from "@/app/components/layout/Navbar";
+import Navbar from "./components/layout/Navbar";
+import Hero from "./components/sections/Hero";
 
 export default function Home() {
   return (
     <main>
       <Navbar />
-      <div style={{ padding: "100px 24px", textAlign: "center", color: "#0d1b3e" }}>
-        <h1 style={{ fontFamily: "var(--font-amiri)", fontSize: "2.5rem" }}>
-          🕌 Masjid Hamza — Building in progress...
-        </h1>
-      </div>
+      <Hero />
     </main>
   );
 }
