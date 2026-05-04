@@ -53,14 +53,18 @@ export default function Navbar() {
   }, []);
 
   const toggleDarkMode = () => {
-    const next = !darkMode;
-    setDarkMode(next);
-    if (next) {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
+  const next = !darkMode;
+  setDarkMode(next);
+  if (next) {
+    document.documentElement.classList.add("dark");
+    document.body.style.background = "#ffffff";
+    document.body.style.color = "#e8eaf0";
+    localStorage.setItem("theme", "dark");
+  } else {
+    document.documentElement.classList.remove("dark");
+    document.body.style.background = "#ffffff";
+    document.body.style.color = "#0d1b3e";
+    localStorage.setItem("theme", "light");
     }
   };
 

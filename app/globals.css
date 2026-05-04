@@ -9,6 +9,23 @@
   --off-white: #f4f6fb;
   --text-muted: #8a9bbf;
   --border: rgba(201, 168, 76, 0.25);
+  --bg-main: #ffffff;
+  --text-main: #0d1b3e;
+  --card-bg: #ffffff;
+  --section-alt: #ffffff;
+}
+
+/* ── DARK MODE OVERRIDES ── */
+html.dark {
+  --bg-main: #0a0f1e;
+  --text-main: #e8eaf0;
+  --card-bg: #111827;
+  --section-alt: #0d1428;
+  --off-white: #0a0f1e;
+  --navy-mid: #0a1020;
+  --navy: #060d1e;
+  --text-muted: #6b7fa8;
+  --border: rgba(201, 168, 76, 0.2);
 }
 
 html {
@@ -17,19 +34,38 @@ html {
 
 body {
   font-family: var(--font-nunito), sans-serif;
-  background: var(--off-white);
-  color: var(--navy);
+  background: #ffffff;
+  color: var(--text-main);
   overflow-x: hidden;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
-html.dark {
-  --off-white: #0f1420;
-  --navy: #060d1e;
-  --navy-mid: #0d1830;
-  --navy-light: #152244;
+html:not(.dark) body {
+  background: #ffffff;
+  color: #0d1b3e;
 }
 
 html.dark body {
-  background: #0f1420;
+  background: #0a0f1e;
   color: #e8eaf0;
+}
+
+/* ── DARK MODE SECTION BACKGROUNDS ── */
+html.dark section {
+  background: var(--bg-main) !important;
+}
+
+html.dark .card,
+html.dark .service-card,
+html.dark .program-card {
+  background: var(--card-bg) !important;
+  border-color: var(--border) !important;
+}
+
+html.dark h1,
+html.dark h2,
+html.dark h3,
+html.dark h4,
+html.dark p {
+  color: var(--text-main);
 }

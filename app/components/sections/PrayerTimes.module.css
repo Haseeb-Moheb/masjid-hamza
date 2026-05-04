@@ -1,0 +1,157 @@
+.strip {
+  background: var(--navy-mid);
+  border-top: 3px solid var(--gold);
+  border-bottom: 1px solid var(--border);
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+.label {
+  background: var(--gold);
+  color: var(--navy);
+  font-weight: 800;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0 28px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 70px;
+  white-space: nowrap;
+}
+
+.prayerList {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+}
+
+.prayerItem {
+  flex: 1;
+  min-width: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 16px;
+  border-right: 1px solid var(--border);
+  min-height: 70px;
+  position: relative;
+  transition: background 0.2s;
+}
+
+.prayerItem:hover {
+  background: rgba(201, 168, 76, 0.06);
+}
+
+.prayerItem.active {
+  background: rgba(201, 168, 76, 0.08);
+}
+
+.prayerItem.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gold);
+}
+
+.prayerName {
+  font-size: 0.68rem;
+  font-weight: 800;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 4px;
+}
+
+.prayerTime {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.prayerItem.active .prayerName {
+  color: var(--gold);
+}
+
+.prayerItem.active .prayerTime {
+  color: var(--gold-light);
+}
+
+.dateBox {
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-left: 1px solid var(--border);
+  min-height: 70px;
+  gap: 3px;
+}
+
+.hijri {
+  font-family: var(--font-amiri), serif;
+  font-size: 0.88rem;
+  color: var(--gold-light);
+  white-space: nowrap;
+}
+
+.gregorian {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.loading {
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  padding: 20px 28px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nextPrayer {
+  font-size: 0.68rem;
+  color: var(--gold);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 2px;
+}
+
+@media (max-width: 768px) {
+  .prayerList {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+  }
+  .label {
+    width: 100%;
+    justify-content: center;
+    min-height: 44px;
+  }
+  .dateBox {
+    width: 100%;
+    border-left: none;
+    border-top: 1px solid var(--border);
+    flex-direction: row;
+    gap: 12px;
+    padding: 10px 20px;
+    min-height: auto;
+  }
+  .inner {
+    flex-direction: column;
+  }
+}
