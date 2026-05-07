@@ -19,8 +19,7 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen]   = useState(false);
   const [scrolled, setScrolled]   = useState(false);
   const [hijriDate, setHijriDate] = useState("Loading...");
-  const [darkMode, setDarkMode]   = useState(false);
-
+  
   // scroll effect
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -44,13 +43,15 @@ export default function Navbar() {
   }, []);
 
   // dark mode — apply to <html> and persist in localStorage
-  useEffect(() => {
+  const [darkMode, setDarkMode] = useState(() => {
+    if (typeof window === "undefined") return false;
     const saved = localStorage.getItem("theme");
     if (saved === "dark") {
-      setDarkMode(true);
       document.documentElement.classList.add("dark");
+      return true;
     }
-  }, []);
+    return false;
+  });
 
   const toggleDarkMode = () => {
   const next = !darkMode;
@@ -69,7 +70,7 @@ export default function Navbar() {
   };
 
   return (
-    <header>
+    <header className={styles.header}>
       {/* ── TOPBAR ── */}
       <div className={styles.topbar}>
         <div className={styles.topbarInner}>

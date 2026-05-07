@@ -1,3 +1,9 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
 .topbar {
   background: var(--navy);
   border-bottom: 1px solid var(--border);
@@ -39,9 +45,6 @@
 }
 
 .navbar {
-  position: sticky;
-  top: 0;
-  z-index: 100;
   background: var(--navy-mid);
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.35);
   transition: all 0.3s;
@@ -49,6 +52,7 @@
 
 .navbarScrolled {
   background: rgba(22, 37, 80, 0.97);
+  -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
 }
 
