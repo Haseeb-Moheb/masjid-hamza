@@ -1,7 +1,9 @@
 import Navbar from "./components/layout/Navbar";
 import About from "./components/sections/About";
+import AboutIslam from "./components/sections/AboutIslam";
 import Hero from "./components/sections/Hero";
 import PrayerTimes from "./components/sections/PrayerTimes";
+import Programs from "./components/sections/Programs";
 
 export default function Home() {
   return (
@@ -10,6 +12,8 @@ export default function Home() {
       <Hero />
       <PrayerTimes />
       <About />
+      <Programs />
+      <AboutIslam />
     </main>
   );
 }
