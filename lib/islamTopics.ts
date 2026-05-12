@@ -7,6 +7,17 @@ export interface IslamTopic {
   content: string;
 }
 
+export const islamCategories = [
+  "About Islam",
+  "Common Misconceptions",
+  "About Allah",
+  "About Muhammad",
+  "About Jesus",
+  "About the Quran",
+  "Becoming Muslim",
+  "Answers to Racism & Justice",
+];
+
 export const islamTopics: IslamTopic[] = [
   // ABOUT ISLAM
   {

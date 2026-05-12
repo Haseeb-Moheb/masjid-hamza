@@ -9,7 +9,7 @@ const navLinks = [
   { label: "About",        href: "#about" },
   { label: "Prayer Times", href: "#prayer" },
   { label: "Programs",     href: "#programs" },
-  { label: "About Islam",  href: "#islam" },
+  { label: "About Islam",  href: "/about-islam" },
   { label: "Revert",       href: "#revert" },
   { label: "Services",     href: "#services" },
   { label: "Contact",      href: "#contact" },
