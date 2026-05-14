@@ -7,8 +7,13 @@ export function generateStaticParams() {
   return islamTopics.map((t) => ({ slug: t.slug }));
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }) {
-  const topic = islamTopics.find((t) => t.slug === params.slug);
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const topic = islamTopics.find((t) => t.slug === slug);
   if (!topic) return {};
   return {
     title: `${topic.title} — Masjid Hamza`,
@@ -16,18 +21,22 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
   };
 }
 
-export default function IslamTopicPage({ params }: { params: { slug: string } }) {
-  const idx = islamTopics.findIndex((t) => t.slug === params.slug);
+export default async function IslamTopicPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const idx = islamTopics.findIndex((t) => t.slug === slug);
   if (idx === -1) notFound();
 
   const topic = islamTopics[idx];
-  const prev  = idx > 0 ? islamTopics[idx - 1] : null;
-  const next  = idx < islamTopics.length - 1 ? islamTopics[idx + 1] : null;
+  const prev = idx > 0 ? islamTopics[idx - 1] : null;
+  const next = idx < islamTopics.length - 1 ? islamTopics[idx + 1] : null;
 
   return (
     <main className={styles.page}>
 
-      {/* TOP BAR */}
       <div className={styles.topBar}>
         <div className={styles.topBarInner}>
           <Link href="/about-islam" className={styles.backBtn}>
@@ -37,10 +46,8 @@ export default function IslamTopicPage({ params }: { params: { slug: string } })
         </div>
       </div>
 
-      {/* ARTICLE */}
       <article className={styles.article}>
         <div className={styles.articleInner}>
-
           <div className={styles.articleHeader}>
             <div className={styles.icon}>{topic.icon}</div>
             <div className={styles.catTag}>{topic.category}</div>
@@ -64,14 +71,11 @@ export default function IslamTopicPage({ params }: { params: { slug: string } })
               GainPeace.com
             </a>
           </div>
-
         </div>
       </article>
 
-      {/* PREV / NEXT */}
       <div className={styles.navSection}>
         <div className={styles.navInner}>
-
           <div>
             {prev && (
               <Link href={`/about-islam/${prev.slug}`} className={styles.navCard}>
@@ -89,13 +93,14 @@ export default function IslamTopicPage({ params }: { params: { slug: string } })
           <div>
             {next && (
               <Link href={`/about-islam/${next.slug}`} className={styles.navCard}>
-                <div className={styles.navDir} style={{ textAlign: "right" }}>Next →</div>
+                <div className={styles.navDir} style={{ textAlign: "right" }}>
+                  Next →
+                </div>
                 <div className={styles.navIcon}>{next.icon}</div>
                 <div className={styles.navTitle}>{next.title}</div>
               </Link>
             )}
           </div>
-
         </div>
       </div>
 

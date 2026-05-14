@@ -8,14 +8,14 @@ export const metadata = {
 };
 
 const categoryColors: Record<string, string> = {
-  "About Islam":                "linear-gradient(135deg, #0d1b3e, #1e3370)",
-  "Common Misconceptions":      "linear-gradient(135deg, #1a3a1a, #2d6e2d)",
-  "About Allah":                "linear-gradient(135deg, #2a1a00, #7a4400)",
-  "About Muhammad":             "linear-gradient(135deg, #1a0d3a, #4a1a8a)",
-  "About Jesus":                "linear-gradient(135deg, #0d2a3a, #1a6e8a)",
-  "About the Quran":            "linear-gradient(135deg, #3a1a00, #8a4400)",
-  "Becoming Muslim":            "linear-gradient(135deg, #0d3a1a, #1a8a4a)",
-  "Answers to Racism & Justice":"linear-gradient(135deg, #3a0d0d, #8a1a1a)",
+  "About Islam":                 "linear-gradient(135deg, #0d1b3e, #1e3370)",
+  "Common Misconceptions":       "linear-gradient(135deg, #1a3a1a, #2d6e2d)",
+  "About Allah":                 "linear-gradient(135deg, #2a1a00, #7a4400)",
+  "About Muhammad":              "linear-gradient(135deg, #1a0d3a, #4a1a8a)",
+  "About Jesus":                 "linear-gradient(135deg, #0d2a3a, #1a6e8a)",
+  "About the Quran":             "linear-gradient(135deg, #3a1a00, #8a4400)",
+  "Becoming Muslim":             "linear-gradient(135deg, #0d3a1a, #1a8a4a)",
+  "Answers to Racism & Justice": "linear-gradient(135deg, #3a0d0d, #8a1a1a)",
 };
 
 export default function AboutIslamPage() {
@@ -58,15 +58,12 @@ export default function AboutIslamPage() {
                     href={`/about-islam/${topic.slug}`}
                     className={styles.card}
                   >
-                    {/* COLORED IMAGE AREA */}
                     <div
                       className={styles.cardImg}
                       style={{ background: bgColor }}
                     >
                       {topic.icon}
                     </div>
-
-                    {/* CARD BODY */}
                     <div className={styles.cardBody}>
                       <div className={styles.cardNum}>
                         {cat} · {String(i + 1).padStart(2, "0")}
