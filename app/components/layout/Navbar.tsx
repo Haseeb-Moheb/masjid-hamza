@@ -19,6 +19,7 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen]   = useState(false);
   const [scrolled, setScrolled]   = useState(false);
   const [hijriDate, setHijriDate] = useState("Loading...");
+  const [darkMode, setDarkMode] = useState(false);
   
   // scroll effect
   useEffect(() => {
@@ -26,6 +27,20 @@ export default function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // dark mode init from localStorage
+  useEffect(() => {
+  const saved = localStorage.getItem("theme");
+  const isDark = saved === "dark";
+  if (isDark) {
+    document.documentElement.classList.add("dark");
+    document.body.style.background = "#0a0f1e";
+    document.body.style.color = "#e8eaf0";
+  }
+  // update state after a tick to avoid SSR mismatch
+  const timer = setTimeout(() => setDarkMode(isDark), 0);
+  return () => clearTimeout(timer);
+}, []);
 
   // hijri date
   useEffect(() => {
@@ -43,16 +58,6 @@ export default function Navbar() {
   }, []);
 
   // dark mode — apply to <html> and persist in localStorage
-  const [darkMode, setDarkMode] = useState(() => {
-    if (typeof window === "undefined") return false;
-    const saved = localStorage.getItem("theme");
-    if (saved === "dark") {
-      document.documentElement.classList.add("dark");
-      return true;
-    }
-    return false;
-  });
-
   const toggleDarkMode = () => {
   const next = !darkMode;
   setDarkMode(next);
