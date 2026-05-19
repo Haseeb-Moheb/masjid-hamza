@@ -1,0 +1,321 @@
+.section {
+  padding: 90px 24px;
+  background: var(--navy);
+  position: relative;
+  overflow: hidden;
+}
+
+.section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background-image:
+    repeating-linear-gradient(45deg, #c9a84c 0, #c9a84c 1px, transparent 0, transparent 50%),
+    repeating-linear-gradient(-45deg, #c9a84c 0, #c9a84c 1px, transparent 0, transparent 50%);
+  background-size: 30px 30px;
+  pointer-events: none;
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── HEADER ── */
+.header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: rgba(201, 168, 76, 0.1);
+  border: 1px solid var(--border);
+  padding: 5px 14px;
+  border-radius: 20px;
+  margin-bottom: 16px;
+}
+
+.title {
+  font-family: var(--font-amiri), serif;
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+
+.goldLine {
+  width: 56px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+  border-radius: 2px;
+  margin: 18px auto 22px;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.8;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+/* ── STEPS ── */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 64px;
+}
+
+.step {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 36px 28px;
+  text-align: center;
+  position: relative;
+  transition: all 0.3s;
+}
+
+.step:hover {
+  background: rgba(255, 255, 255, 0.07);
+  transform: translateY(-4px);
+  border-color: var(--gold);
+}
+
+.stepNum {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: var(--navy);
+  font-weight: 900;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.stepIcon {
+  font-size: 2.2rem;
+  margin-bottom: 16px;
+}
+
+.stepTitle {
+  font-family: var(--font-amiri), serif;
+  font-size: 1.3rem;
+  color: var(--gold-light);
+  margin-bottom: 10px;
+}
+
+.stepDesc {
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.75;
+}
+
+/* ── SHAHADA CARD ── */
+.shahadaCard {
+  background: rgba(201, 168, 76, 0.06);
+  border: 2px solid var(--gold);
+  border-radius: 24px;
+  padding: 48px 40px;
+  text-align: center;
+  margin-bottom: 64px;
+  position: relative;
+  overflow: hidden;
+}
+
+.shahadaCard::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(201,168,76,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.shahadaArabic {
+  font-family: var(--font-amiri), serif;
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  color: var(--gold-light);
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+.shahadaTranslit {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-style: italic;
+  margin-bottom: 8px;
+}
+
+.shahadaTranslation {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 24px;
+}
+
+.shahadaDesc {
+  font-size: 0.92rem;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.8;
+  max-width: 580px;
+  margin: 0 auto;
+}
+
+/* ── BOTTOM GRID ── */
+.bottomGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-bottom: 56px;
+}
+
+.infoCard {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 32px;
+}
+
+.infoCard h3 {
+  font-family: var(--font-amiri), serif;
+  font-size: 1.3rem;
+  color: var(--gold-light);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.infoList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.infoItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.65;
+}
+
+.infoItem::before {
+  content: '✓';
+  color: var(--gold);
+  font-weight: 800;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* ── CTA ── */
+.cta {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 48px 32px;
+}
+
+.cta h3 {
+  font-family: var(--font-amiri), serif;
+  font-size: 1.8rem;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.cta p {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.8;
+  max-width: 520px;
+  margin: 0 auto 32px;
+}
+
+.ctaButtons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btnPrimary {
+  background: var(--gold);
+  color: var(--navy);
+  font-weight: 800;
+  font-size: 0.9rem;
+  padding: 14px 32px;
+  border-radius: 30px;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: all 0.25s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btnPrimary:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(201, 168, 76, 0.4);
+}
+
+.btnOutline {
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 14px 32px;
+  border-radius: 30px;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: all 0.25s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btnOutline:hover {
+  border-color: var(--gold);
+  color: var(--gold-light);
+  transform: translateY(-2px);
+}
+
+/* ── FADE IN ── */
+.fadeIn {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.fadeIn.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .bottomGrid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px) {
+  .steps { grid-template-columns: 1fr; }
+  .shahadaCard { padding: 32px 20px; }
+  .ctaButtons { flex-direction: column; align-items: center; }
+}
