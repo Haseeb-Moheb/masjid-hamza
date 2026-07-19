@@ -69,3 +69,9 @@ html.dark h4,
 html.dark p {
   color: var(--text-main);
 }
+
+/* Smooth scroll offset for sticky header */
+section[id],
+div[id] {
+  scroll-margin-top: 110px;
+}

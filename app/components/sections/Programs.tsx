@@ -67,6 +67,20 @@ const programs = [
     desc: "Special Taraweeh prayers nightly, Iftar gatherings, Quran completion ceremony, Laylatul Qadr vigils, and Eid celebrations.",
     time: "Ramadan & Eid",
   },
+{
+    icon: "🏫",
+    tag: "Weekly",
+    title: "Salam Academy — Islamic Weekend School",
+    desc: "Islamic education for children ages 5–12. Saturday & Sunday 10am to 1pm. $75 first child · $65 second sibling · $55 third sibling.",
+    time: "Sat & Sun · 10:00 AM – 1:00 PM",
+  },
+  {
+    icon: "📿",
+    tag: "Weekly",
+    title: "Girls Hifz Program",
+    desc: "Girls-only Quran memorization school in a supportive environment. Students are guided to memorize the Quran at their own pace alongside Islamic studies and character development. Registration open for 2025–2026.",
+    time: "Contact us for schedule",
+  },
 ];
 
 const filters = ["All", "Daily", "Weekly", "Monthly", "Seasonal"];

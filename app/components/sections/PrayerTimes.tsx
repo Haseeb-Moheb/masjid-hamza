@@ -6,7 +6,6 @@ import styles from "./PrayerTimes.module.css";
 interface Prayer {
   name: string;
   time: string;
-  arabic: string;
 }
 
 function formatTime(t: string): string {
@@ -23,13 +22,13 @@ function toMins(t: string): number {
 }
 
 export default function PrayerTimes() {
-  const [prayers, setPrayers]       = useState<Prayer[]>([]);
-  const [activeIdx, setActiveIdx]   = useState(0);
-  const [nextIdx, setNextIdx]       = useState(1);
-  const [hijri, setHijri]           = useState("");
-  const [gregorian, setGregorian]   = useState("");
-  const [loading, setLoading]       = useState(true);
-  const [error, setError]           = useState(false);
+  const [prayers, setPrayers]     = useState<Prayer[]>([]);
+  const [activeIdx, setActiveIdx] = useState(0);
+  const [nextIdx, setNextIdx]     = useState(1);
+  const [hijri, setHijri]         = useState("");
+  const [gregorian, setGregorian] = useState("");
+  const [loading, setLoading]     = useState(true);
+  const [error, setError]         = useState(false);
 
   useEffect(() => {
     const today = new Date();
@@ -47,12 +46,12 @@ export default function PrayerTimes() {
         const g = data.data.date.gregorian;
 
         const prayerList: Prayer[] = [
-          { name: "Fajr",    arabic: "الفجر",    time: t.Fajr },
-          { name: "Sunrise", arabic: "الشروق",   time: t.Sunrise },
-          { name: "Dhuhr",   arabic: "الظهر",    time: t.Dhuhr },
-          { name: "Asr",     arabic: "العصر",    time: t.Asr },
-          { name: "Maghrib", arabic: "المغرب",   time: t.Maghrib },
-          { name: "Isha",    arabic: "العشاء",   time: t.Isha },
+          { name: "Fajr",    time: t.Fajr },
+          { name: "Sunrise", time: t.Sunrise },
+          { name: "Dhuhr",   time: t.Dhuhr },
+          { name: "Asr",     time: t.Asr },
+          { name: "Maghrib", time: t.Maghrib },
+          { name: "Isha",    time: t.Isha },
         ];
 
         const now = today.getHours() * 60 + today.getMinutes();
@@ -76,15 +75,13 @@ export default function PrayerTimes() {
   }, []);
 
   return (
-    <div className={styles.strip} id="prayer">
+    <section className={styles.strip} id="prayer">
       <div className={styles.inner}>
 
-        {/* LABEL */}
         <div className={styles.label}>
           🕌 Today&apos;s Salah
         </div>
 
-        {/* PRAYER TIMES */}
         {loading && (
           <div className={styles.loading}>
             ⏳ Loading prayer times for San Diego (92126)…
@@ -114,7 +111,6 @@ export default function PrayerTimes() {
           </div>
         )}
 
-        {/* DATE BOX */}
         {!loading && !error && (
           <div className={styles.dateBox}>
             <div className={styles.hijri}>{hijri}</div>
@@ -123,6 +119,6 @@ export default function PrayerTimes() {
         )}
 
       </div>
-    </div>
+    </section>
   );
 }
