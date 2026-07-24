@@ -75,7 +75,9 @@ export default function PrayerTimes() {
   }, []);
 
   return (
-    <section className={styles.strip} id="prayer">
+    <>
+      <div id="prayer" style={{ position: "relative", top: "-110px" }} />
+      <section className={styles.strip}>
       <div className={styles.inner}>
 
         <div className={styles.label}>
@@ -120,5 +122,6 @@ export default function PrayerTimes() {
 
       </div>
     </section>
+  </>
   );
 }
