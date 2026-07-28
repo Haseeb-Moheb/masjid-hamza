@@ -47,11 +47,11 @@ const services = [
     linkLabel: "Contact Imam",
   },
   {
-    icon: "🕋",
-    title: "Hajj & Umrah Guidance",
-    desc: "Information, preparation guidance, and support for brothers and sisters planning Hajj or Umrah.",
-    link: "#contact",
-    linkLabel: "Ask Us",
+    icon: "🤍",
+    title: "Funeral & Janazah Services",
+    desc: "We assist families with Islamic funeral arrangements including Ghusl, Kafan, Janazah prayer, and burial coordination. Contact us immediately in times of need.",
+    link: "/funeral-services",
+    linkLabel: "View Full Details",
   },
   {
     icon: "🌙",

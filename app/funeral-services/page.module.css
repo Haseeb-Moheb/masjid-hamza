@@ -1,0 +1,352 @@
+.page {
+  min-height: 100vh;
+  background: var(--bg-main);
+}
+
+/* TOP BAR */
+.topBar {
+  background: var(--navy);
+  border-bottom: 1px solid var(--border);
+  padding: 12px 24px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.topBarInner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.backBtn {
+  color: var(--gold-light);
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 700;
+  transition: opacity 0.2s;
+}
+
+.backBtn:hover { opacity: 0.8; }
+
+.topBarCat {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(160deg, #0a1428 0%, #0d1b3e 60%, #111e45 100%);
+  padding: 60px 24px 50px;
+  border-bottom: 3px solid var(--gold);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background-image:
+    repeating-linear-gradient(45deg, #c9a84c 0, #c9a84c 1px, transparent 0, transparent 50%),
+    repeating-linear-gradient(-45deg, #c9a84c 0, #c9a84c 1px, transparent 0, transparent 50%);
+  background-size: 30px 30px;
+}
+
+.heroInner {
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.tag {
+  display: inline-block;
+  font-family: var(--font-amiri), serif;
+  font-size: 1rem;
+  color: var(--gold-light);
+  background: rgba(201, 168, 76, 0.1);
+  border: 1px solid var(--border);
+  padding: 6px 18px;
+  border-radius: 20px;
+  margin-bottom: 16px;
+  font-style: italic;
+}
+
+.title {
+  font-family: var(--font-amiri), serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.goldLine {
+  width: 56px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+  border-radius: 2px;
+  margin: 16px auto 20px;
+}
+
+.subtitle {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.8;
+  margin-bottom: 28px;
+}
+
+.emergencyBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--gold);
+  color: var(--navy);
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 0.95rem;
+  padding: 12px 28px;
+  border-radius: 30px;
+  transition: all 0.25s;
+}
+
+.emergencyBtn:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+}
+
+/* CONTENT */
+.content {
+  padding: 52px 24px 80px;
+}
+
+.contentInner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* INTRO CARD */
+.introCard {
+  background: rgba(201, 168, 76, 0.06);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px 32px;
+}
+
+.introCard p {
+  font-size: 0.97rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-top: 12px;
+}
+
+/* CARDS */
+.card {
+  background: var(--card-bg, #ffffff);
+  border: 1px solid rgba(13, 27, 62, 0.08);
+  border-radius: 18px;
+  padding: 32px;
+  box-shadow: 0 2px 12px rgba(13, 27, 62, 0.05);
+}
+
+html.dark .card {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: var(--border);
+}
+
+.sectionTitle {
+  font-family: var(--font-amiri), serif;
+  font-size: 1.5rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.cardTitle {
+  font-family: var(--font-amiri), serif;
+  font-size: 1.4rem;
+  color: var(--text-main);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.cardNum {
+  width: 36px;
+  height: 36px;
+  background: var(--gold);
+  color: var(--navy);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.cardDesc {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.subTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin: 20px 0 12px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-left: 20px;
+}
+
+.list li {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.orderedList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-left: 24px;
+}
+
+.orderedList li {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.75;
+}
+
+/* CONTACT GRID */
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.contactCard {
+  background: var(--navy);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.contactName {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--gold-light);
+  margin-bottom: 4px;
+}
+
+.contactDetail {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.5;
+}
+
+.contactPhone {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  margin-top: 6px;
+  transition: opacity 0.2s;
+}
+
+.contactPhone:hover { opacity: 0.8; }
+
+.contactLink {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.contactLink:hover { color: var(--gold-light); }
+
+/* IMPORTANT CARD */
+.importantCard {
+  background: rgba(201, 168, 76, 0.08);
+  border: 2px solid var(--gold);
+  border-radius: 16px;
+  padding: 28px 32px;
+}
+
+.importantCard h3 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--gold-light);
+  margin-bottom: 12px;
+}
+
+.importantCard p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.75;
+  margin-bottom: 8px;
+}
+
+.importantContact {
+  margin-top: 16px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 2;
+}
+
+.importantContact a {
+  color: var(--gold);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.importantContact a:hover { text-decoration: underline; }
+
+/* BACK HOME */
+.backHomeBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--navy);
+  color: var(--gold-light);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 12px 28px;
+  border-radius: 30px;
+  border: 1px solid var(--border);
+  transition: all 0.25s;
+}
+
+.backHomeBtn:hover {
+  background: var(--navy-light);
+  border-color: var(--gold);
+}
+
+/* RESPONSIVE */
+@media (max-width: 640px) {
+  .contactGrid { grid-template-columns: 1fr; }
+  .card { padding: 24px 20px; }
+}
