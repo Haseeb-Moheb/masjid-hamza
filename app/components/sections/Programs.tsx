@@ -28,9 +28,9 @@ const programs = [
   {
     icon: "🎓",
     tag: "Weekly",
-    title: "Islamic Education",
+    title: "Islamic Classes & Tafseer",
     desc: "Weekly classes covering Quran Tafseer, Hadith, Fiqh, and Islamic history. Separate tracks for adults, teens, and children.",
-    time: "Weekly — TBD",
+    time: "Weekly — Schedule TBD",
   },
   {
     icon: "⭐",
@@ -71,15 +71,22 @@ const programs = [
     icon: "🏫",
     tag: "Weekly",
     title: "Salam Academy — Islamic Weekend School",
-    desc: "Islamic education for children ages 5–12. Saturday & Sunday 10am to 1pm. $75 first child · $65 second sibling · $55 third sibling.",
+    desc: "Islamic education for boys & girls. Quranic Studies, Seerah of the Prophet ﷺ, Fiqh for Daily Life, and Character Building.",
     time: "Sat & Sun · 10:00 AM – 1:00 PM",
+  },
+  {
+    icon: "📖",
+    tag: "Weekly",
+    title: "Boys & Adults Hifz Program",
+    desc: "Quran memorization for boys and adults. Tajweed & Qira'at, Structured Revision, and Personalized Support with qualified teachers.",
+    time: "Tue, Wed & Thu · 4:00 PM – 7:00 PM | Sat & Sun · 10:00 AM – 1:00 PM",
   },
   {
     icon: "📿",
     tag: "Weekly",
     title: "Girls Hifz Program",
-    desc: "Girls-only Quran memorization school in a supportive environment. Students are guided to memorize the Quran at their own pace alongside Islamic studies and character development. Registration open for 2025–2026.",
-    time: "Contact us for schedule",
+    desc: "Girls-only Quran memorization program. Tajweed & Qira'at, Structured Revision, and Personalized Support in a focused environment.",
+    time: "Thu & Fri · 5:00 PM – 7:00 PM | Sat & Sun · 10:00 AM – 1:00 PM",
   },
 ];
 
