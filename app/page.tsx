@@ -1,5 +1,6 @@
 import Navbar from "./components/layout/Navbar";
 import About from "./components/sections/About";
+import Contact from "./components/sections/Contact";
 import Donate from "./components/sections/Donate";
 import Hero from "./components/sections/Hero";
 import PrayerTimes from "./components/sections/PrayerTimes";
@@ -18,6 +19,7 @@ export default function Home() {
       <Revert />
       <Services />
       <Donate />
+      <Contact />
     </main>
   );
 }
