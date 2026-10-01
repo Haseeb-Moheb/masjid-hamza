@@ -89,6 +89,9 @@
 .instagram:hover { background: linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); border-color: #dc2743; }
 .youtube:hover   { background: #FF0000; border-color: #FF0000; }
 .linkedin:hover  { background: #0A66C2; border-color: #0A66C2; }
+.x:hover        { background: #000000; border-color: #000000; color: #ffffff; }
+.reddit:hover   { background: #FF4500; border-color: #FF4500; color: #ffffff; }
+.whatsapp:hover { background: #25D366; border-color: #25D366; color: #ffffff; }
 
 /* ── NAV COLUMNS ── */
 .col h5 {
